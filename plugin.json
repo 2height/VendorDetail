@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Vendor Details",
+  "SystemName": "Widgets.VendorDetails",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.00" ],
+  "Author": "height",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.VendorDetails.dll",
+  "Description": "This plugin shows Vendor details and some product information on product page"
+}

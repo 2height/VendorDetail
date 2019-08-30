@@ -1,0 +1,84 @@
+﻿@model Nop.Plugin.Widgets.VendorDetails.Models.ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+<form asp-controller="WidgetsVendorDetails" asp-action="Configure" method="post">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @T("Plugins.Widgets.VendorDetails.PluginInformation")
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="ShowVendorPhoneNumer_OverrideForStore" asp-input="ShowVendorPhoneNumer" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="ShowVendorPhoneNumer" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="ShowVendorPhoneNumer" />
+                        <span asp-validation-for="ShowVendorPhoneNumer"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="ShowVendorPhoneNumer_OverrideForStore" asp-input="ShowVendorPhoneNumer" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="ShowVendorPhoneNumer" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="ShowVendorPhoneNumer" />
+                        <span asp-validation-for="ShowVendorPhoneNumer"></span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="ShowProductRating_OverrideForStore" asp-input="ShowProductRating" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="ShowProductRating" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="ShowProductRating" />
+                        <span asp-validation-for="ShowProductRating"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="ShowVendorEmail_OverrideForStore" asp-input="ShowVendorEmail" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="ShowVendorEmail" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="ShowVendorEmail" />
+                        <span asp-validation-for="ShowVendorEmail"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="ShowProductSoldCount_OverrideForStore" asp-input="ShowProductSoldCount" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="ShowProductSoldCount" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="ShowProductSoldCount" />
+                        <span asp-validation-for="ShowProductSoldCount"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+  
+    </div>
+</form>

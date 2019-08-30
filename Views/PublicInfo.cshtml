@@ -1,0 +1,58 @@
+﻿
+@model Nop.Plugin.Widgets.VendorDetails.Models.PublicInfoModel
+@{
+    Layout = "";
+
+    Html.AddCssFileParts("~/Plugins/Widgets.VendorDetails/Style/Vmin.css");
+
+    string vendorEmail = Model.Email;
+    bool showVendorEmail = !string.IsNullOrEmpty(vendorEmail);
+
+    string Phone = Model.Phone;
+    bool showPhoneNumber = !string.IsNullOrEmpty(Phone);
+
+    string rating = Model.Rating.ToString();
+    bool showY = !string.IsNullOrEmpty(rating);
+
+    string SoldCount = Model.SoldCount.ToString();
+    bool sold = !string.IsNullOrEmpty(SoldCount);
+
+    string vendorDescription = Model.Description;
+    bool showVendorDescription = !string.IsNullOrEmpty(vendorDescription);
+}
+
+
+
+<ul class="list-group">
+
+    <li class="list-group-item justify-content-between">
+        @T("Plugins.Widgets.VendorDetails.VendorName")
+        <span class="badge badge-default badge-pill"><a href="@Url.RouteUrl("Vendor", new { SeName = Model.SeName })">@Model.Name</a></span>
+    </li>
+    @if (showVendorEmail)
+    {
+        <li class="list-group-item justify-content-between">
+            @T("Plugins.Widgets.VendorDetails.VendorEmail")
+            <span class="badge badge-default badge-pill">
+                <a href="mailto:@vendorEmail">
+                    @vendorEmail
+            </a>
+        </span>
+    </li>
+}
+   
+    @if (showPhoneNumber)
+    {
+        <li class="list-group-item justify-content-between">
+            @T("Plugins.Widgets.VendorDetails.Phone")
+            <span class="badge badge-default badge-pill"><a href="tel:@Phone">@Phone</a></span>
+        </li>
+    }
+    @if (sold)
+    {
+        <li class="list-group-item justify-content-between">
+            >@T("Plugins.Widgets.VendorDetails.Sold")
+            <span class="badge badge-default badge-pill">@Html.Raw(SoldCount)</span>
+        </li>
+    }
+</ul>
